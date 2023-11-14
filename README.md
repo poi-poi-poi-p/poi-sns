@@ -7,6 +7,7 @@ Django + DRF + PostgreSQLでオレオレFediverseサーバーを作ってみた�
 # コンテナの作成と起動
 
 ```
+$ git clone git@github.com:poi-poi-poi-p/poi-sns.git
 $ cd poi-sns
 $ docker build -f deploy/Dockerfile -t django .
 $ docker run -p 8000:8000 -it --rm django

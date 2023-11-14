@@ -25,7 +25,7 @@ tests/screenshots/
 *.pyc
 *.db
 *~
-.*
+# .*
 *.py.bak
 
 
@@ -45,4 +45,6 @@ coverage.*
 
 # app
 
+.vscode
+.env
 sns/db.sqlite3
