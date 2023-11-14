@@ -8,4 +8,4 @@ RUN pip install --no-cache-dir -r requirements-minimum.txt
 
 COPY django/ ./
 
-CMD exec gunicorn sns.wsgi:application --bind 0.0.0.0:8000
+CMD ["/bin/bash", "-c", "gunicorn sns.wsgi:application --bind 0.0.0.0:8000"]
