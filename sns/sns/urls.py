@@ -23,7 +23,7 @@ from .views.views import SnsViewSet
 
 router = DefaultRouter()
 #router.register('admin', admin.site.urls)
-router.register(r'sns', SnsViewSet, basename='sns')
+router.register(r'', SnsViewSet, basename='sns')
 
 urlpatterns = [
     path(r'', include(router.urls)),
