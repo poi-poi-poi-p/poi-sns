@@ -6,6 +6,6 @@ COPY deploy/requirements-minimum.txt ./
 
 RUN pip install --no-cache-dir -r requirements-minimum.txt
 
-COPY sns/ ./
+COPY django/ ./
 
 CMD exec gunicorn sns.wsgi:application --bind 0.0.0.0:8000

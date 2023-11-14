@@ -10,4 +10,4 @@ docs/releases/*.txt merge=union
 
 # app
 
-sns/static/* linguist-vendored
+django/static/* linguist-vendored
