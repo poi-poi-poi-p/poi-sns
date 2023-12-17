@@ -19,8 +19,11 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from rest_framework.urlpatterns import format_suffix_patterns
 
+from .views.index import index
 from .views.views import SnsViewSet
 from .views.actor import ActorView
+from .views.collection import CollectionView
+from .views.ordered_collection import OrderedCollectionView
 from .views.well_known import WellKnownView
 
 router = DefaultRouter(trailing_slash=False)
@@ -31,6 +34,9 @@ router.register(r'sns', SnsViewSet, basename='sns')
 
 urlpatterns = [
     path(r'', include(router.urls)),
+    path(r'index.html', index, name='index'),
     path(r'poi', ActorView.as_view()),
+    path(r'collection', CollectionView.as_view()),
+    path(r'ordered-collection', OrderedCollectionView.as_view()),
     path(r'.well-known/webfinger', WellKnownView.as_view()),
 ]
