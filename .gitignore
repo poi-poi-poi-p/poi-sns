@@ -48,3 +48,4 @@ coverage.*
 .vscode
 .env
 django/db.sqlite3
+django/static

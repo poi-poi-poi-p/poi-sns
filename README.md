@@ -12,3 +12,8 @@ $ cd poi-sns
 $ docker build -f deploy/Dockerfile -t django .
 $ docker run -p 8000:8000 -it --rm django
 ```
+
+DRFのAPIデバッグページ静的ファイル集約
+```
+$ python manage.py collectstatic
+```
