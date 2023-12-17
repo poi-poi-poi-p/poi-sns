@@ -1,5 +1,13 @@
 version: '3.7'
 
+# for jwilder/nginx-proxy
+networks:
+  default:
+    external:
+      name: bridge
+  container-link:
+    name: container_network
+
 services:
   web:
     build: .
@@ -9,6 +17,8 @@ services:
       - container-link
     environment:
       - "VIRTUAL_HOST=${VIRTUAL_HOST}"
+      - "LETSENCRYPT_HOST=${VIRTUAL_HOST}"
+      - "CERT_NAME=${VIRTUAL_HOST}"
 
     # depends_on:
     #   - db

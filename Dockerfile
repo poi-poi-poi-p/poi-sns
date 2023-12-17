@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 COPY deploy/requirements-minimum.txt ./
 
-RUN pip install --no-cache-dir -r requirements-minimum.txt
+RUN pip install --progress-bar off --no-cache-dir -r requirements-minimum.txt
 
 COPY deploy/entrypoint.sh ./
 RUN chmod +x ./entrypoint.sh
