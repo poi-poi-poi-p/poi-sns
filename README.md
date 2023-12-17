@@ -15,7 +15,7 @@ $ cd poi-sns
 $ vi .env
 
 コンテナのビルドと実行
-$ docker build -f deploy/Dockerfile -t django .
+$ docker build -t django .
 $ docker run -p 8000:8000 -it --rm django
 
 ブラウザで http://127.0.0.1:8000 を開く

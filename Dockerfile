@@ -9,6 +9,7 @@ RUN pip install --progress-bar off --no-cache-dir -r requirements-minimum.txt
 COPY deploy/entrypoint.sh ./
 RUN chmod +x ./entrypoint.sh
 
-COPY django/ ./
+COPY django ./django
+COPY .env ./
 
 CMD ["/bin/bash", "-c", "./entrypoint.sh"]
