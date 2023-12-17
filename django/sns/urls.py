@@ -20,11 +20,17 @@ from rest_framework.routers import DefaultRouter
 from rest_framework.urlpatterns import format_suffix_patterns
 
 from .views.views import SnsViewSet
+from .views.actor import ActorView
+from .views.well_known import WellKnownView
 
-router = DefaultRouter()
+router = DefaultRouter(trailing_slash=False)
+
 #router.register('admin', admin.site.urls)
-router.register(r'', SnsViewSet, basename='sns')
+router.register(r'sns', SnsViewSet, basename='sns')
+#router.register(r'.well-known', WellKnownView.as_view(), basename='well-known')
 
 urlpatterns = [
     path(r'', include(router.urls)),
+    path(r'poi', ActorView.as_view()),
+    path(r'.well-known/webfinger', WellKnownView.as_view()),
 ]
