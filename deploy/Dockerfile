@@ -6,6 +6,9 @@ COPY deploy/requirements-minimum.txt ./
 
 RUN pip install --no-cache-dir -r requirements-minimum.txt
 
+COPY deploy/entrypoint.sh ./
+RUN chmod +x ./entrypoint.sh
+
 COPY django/ ./
 
-CMD ["/bin/bash", "-c", "gunicorn sns.wsgi:application --bind 0.0.0.0:8000"]
+CMD ["/bin/bash", "-c", "./entrypoint.sh"]

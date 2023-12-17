@@ -11,6 +11,8 @@ $ git clone git@github.com:poi-poi-poi-p/poi-sns.git
 $ cd poi-sns
 $ docker build -f deploy/Dockerfile -t django .
 $ docker run -p 8000:8000 -it --rm django
+
+ブラウザで http://127.0.0.1:8000 を開く
 ```
 
 DRFのAPIデバッグページ静的ファイル集約
